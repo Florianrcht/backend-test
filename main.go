@@ -57,7 +57,7 @@ func main() {
 
 	logger.Info("Database connected")
 
-	app := internal.NewApp(logger)
+	app := internal.NewApp(logger, db)
 
 	r := mux.NewRouter()
 	app.RegisterRoutes(r.PathPrefix("/v1").Subrouter())
